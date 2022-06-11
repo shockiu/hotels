@@ -24,4 +24,5 @@ export const TYPE_ROOM = sequelize.define('type_room', {
     }
 }, { freezeTableName: true, tableName: 'type_room' });
 
-TYPE_ROOM.hasMany(RESERVATIONS, { foreignKey: 'room_id' });
+TYPE_ROOM.hasMany(RESERVATIONS, { foreignKey: 'id'});
+RESERVATIONS.belongsTo(TYPE_ROOM, { foreignKey: 'room_id'});

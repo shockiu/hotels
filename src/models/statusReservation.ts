@@ -24,4 +24,6 @@ export const STATUS_RESERVATION = sequelize.define('status_reservation', {
     }
 }, { freezeTableName: true, tableName: 'status_reservation' });
 
-STATUS_RESERVATION.hasMany(RESERVATIONS, { foreignKey: 'status' });
+
+STATUS_RESERVATION.hasMany(RESERVATIONS, { foreignKey: 'id' });
+RESERVATIONS.belongsTo(STATUS_RESERVATION, { foreignKey: 'status'});

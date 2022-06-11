@@ -28,4 +28,3 @@ export const CLIENTS = sequelize.define('clients', {
     }
 },  { freezeTableName: true, tableName: 'clients' });
 
-CLIENTS.hasMany(RESERVATIONS, { foreignKey: 'client_id' });

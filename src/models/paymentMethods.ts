@@ -23,4 +23,5 @@ export const PAYMENT_METHODS = sequelize.define('payment_methods', {
     }
 }, { freezeTableName: true, tableName: 'payment_methods' });
 
-PAYMENT_METHODS.hasMany(RESERVATIONS, { foreignKey: 'payment_id' });
+PAYMENT_METHODS.hasMany(RESERVATIONS, { foreignKey: 'id'});
+RESERVATIONS.belongsTo(PAYMENT_METHODS, { foreignKey: 'payment_id'});

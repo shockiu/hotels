@@ -1,8 +1,6 @@
 import sequelize from '../database/db';
 import { DataTypes } from 'sequelize';
-
-import { INVOICES } from './invoices';
-
+import { INVOICES, TYPE_ROOM, STATUS_RESERVATION, CLIENTS, PAYMENT_METHODS } from './index';
 export const RESERVATIONS = sequelize.define('reservations', {
     id: {
         type: DataTypes.INTEGER,
@@ -12,23 +10,43 @@ export const RESERVATIONS = sequelize.define('reservations', {
     },
     status: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: STATUS_RESERVATION,
+            key: 'id' 
+    }
     },
     room_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false, 
+        references : {
+            model: TYPE_ROOM,
+            key: 'id'
+        }
     },
     invoice_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: INVOICES,
+            key: 'id'
+        }
     },
     client_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: CLIENTS,
+            key: 'id'
+        }
     },
     payment_id: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: PAYMENT_METHODS,
+            key: 'id'
+        }
     },
     amount: {
         type: DataTypes.DECIMAL(5,2),
@@ -46,7 +64,11 @@ export const RESERVATIONS = sequelize.define('reservations', {
         type: DataTypes.DATE,
         allowNull: true
     }
-}, { freezeTableName: true, tableName: 'reservations' });
+}, { freezeTableName: true, tableName: 'reservations', modelName: 'reservations' });
 
 
 RESERVATIONS.belongsTo(INVOICES, { foreignKey: 'invoice_id', targetKey: 'id' });
+
+CLIENTS.hasMany(RESERVATIONS, { foreignKey: 'client_id' });
+RESERVATIONS.belongsTo(CLIENTS, { foreignKey:'id' });
+

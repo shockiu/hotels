@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import db from '../database/db';
-//import routesApi from '../routes/routes';
+import routesApi from '../routes/routes';
 import chalk from 'chalk';
 
 export class Server {
@@ -49,7 +49,7 @@ export class Server {
         }
 
         routes() {
-           // this.app.use( this.apiPath.routes,  routesApi );
+           this.app.use( this.apiPath.routes,  routesApi );
         }
 
         async dbConnection() {
