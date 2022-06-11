@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { FindOptions, Op } from 'sequelize';
+import { FindOptions } from 'sequelize';
 import { RESERVATIONS, INVOICES, TYPE_ROOM, STATUS_RESERVATION, CLIENTS, PAYMENT_METHODS } from '../../models/index';
 import { addPagination } from '../../helpers/addPagination';
 

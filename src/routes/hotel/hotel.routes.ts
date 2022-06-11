@@ -1,6 +1,8 @@
 
 import { Router } from 'express';
 import { getReservations } from '../../controllers/reservations/getReservations';
+import { createReservation } from '../../controllers/reservations/createReservation';
+// import {  } from '../../controllers/reservations/modifyReservation';
 
 export const reservationsRoutes = (routes: Router) => {
 
@@ -19,7 +21,7 @@ export const reservationsRoutes = (routes: Router) => {
      * 
      * POST
      */
-
+    routes.post('/reservations', createReservation);
     /**
      * 
      * PUT
