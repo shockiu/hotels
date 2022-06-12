@@ -95,13 +95,20 @@ npm run test:coverage
 
 ```
 
+  
 
 ## Base de datos
 
-La estructura de la base de datos es la siguiente:  
+  
+
+La estructura de la base de datos es la siguiente:
+
+  
 
 ![](https://i.imgur.com/uiy5rJrl.png)
 
+  
+  
 
  - **clients** *One-to-many* *->* **reservations**
  - **status_reservation** *One-to-many* *->* **reservations**
@@ -112,6 +119,7 @@ La estructura de la base de datos es la siguiente:
 ## Endpoints 
 
 ### Reservaciones
+#### GET
 El primero endpoint para la listar cada una de las reservaciones del hotel es el siguinte: 
 
     GET /api/v1/reservations
@@ -161,7 +169,44 @@ Un ejemplo de la informacion seria:
 }
 ```
 
-GET /api/v1/reservations?room_id=4&payment_id=3&limit=2&page=0 HTTP/1.1
+> OPCIONAL: si se quiere llegar a paginar los resultados se puede usar de esta manera `GET /api/v1/reservations?limit=5&page=0 ` 
+> También se puede buscar por campos especificos  								`GET /api/v1/reservations?room_id=4&payment_id=3`. En este caso indicando el ***room_id*** del tipo de habitacion y ***payment_id*** del método de pago
+
+#### POST
+
+Este endpoint sirve la creación de cada una de las reservaciones del hotel: 
+
+    POST /api/v1/reservations
+Enviando la información por el body de la request como sigue: 
+
+     {
+   	    "status": 2,
+   	    "room_id": 2,
+   	    "client_id": 5,
+   	    "payment_id": 2,
+   	    "amount": 100.99,
+   	    "day_stay": 10,
+   	    "invoice" : {
+   	        "client_id": 5,
+   	        "detail": "big room for me please"
+   	    }
+    }
+Enviando el ***status***  o estado de esa reservación, el ***room_id*** del tipo de habitación relacionada, el ***client_id*** del que reserva, el ***payment_id*** del método de pago, ***amount*** del lado del costo, ***day_stay*** días de estadia y ***invoice*** la factura y detalle relacionada a ese cliente
+
+#### PUT
+
+Para la modificación de alguna reservación hecha en el hotel:
+
+    PUT /api/v1/reservations/1
+Como se muestra se envia un parámetro adicional que seria el id de la reservación registrada en el hotel, en el body puede ir el resto de información necesaria para la actulización del registro:
+
+    {
+        "status": 2
+    }
+En este caso solo se actuliza el status de esa reservacion del hotel dado que es lo único enviado por el body.
+
+
+
 
 
 
