@@ -1,3 +1,4 @@
+
 # Hotels App
 
 App de Express.js y Sequalize que permite manejar el sistema de reservas de habitación de un hotel.
@@ -11,8 +12,11 @@ Esta aplicación permite listar, crear, actualizar y eliminar los registros de r
 * Descargar o clonar este ropositorio.
 
 ```
+
 cd hotels
+
 npm install
+
 ```
 
 ## Ejecución de la app
@@ -20,15 +24,21 @@ npm install
 ### Servidor de desarrollo
 
 Ejecuta:
+
 ```
+
 npm run dev
+
 ```
 
 ### Servidor de producción
 
 Ejecuta:
+
 ```
+
 npm run start
+
 ```
 
 ## Ejecución de test unitarios y code coverage
@@ -36,21 +46,33 @@ npm run start
 ### Test unitarios
 
 Ejecuta:
+
 ```
+
 npm run test
+
 ```
 
 ### Code coverage
 
 Ejecuta:
+
 ```
+
 npm run test:coverage
+
 ```
 
 ## Base de datos
 
 La estructura de la base de datos es la siguiente:
+
 ![](https://i.imgur.com/uiy5rJrl.png)
 
+ - **clients** *One-to-many* *->* **reservations**
+ - **status_reservation** *One-to-many* *->* **reservations**
+ - **type_room** *One-to-many* *->* **reservations**
+ -  **payment_methods** *One-to-many* *->* **reservations**
+ -  **invoices** *One-to-one* *->* **reservations**
 
 ## Authors
