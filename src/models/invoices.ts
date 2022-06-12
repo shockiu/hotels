@@ -8,6 +8,10 @@ export const INVOICES = sequelize.define('invoices', {
         autoIncrement: true,
         allowNull: false
     },
+    client_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     detail: {
         type: DataTypes.STRING(255),
         allowNull: true
