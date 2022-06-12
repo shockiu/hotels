@@ -47,4 +47,10 @@ Ejecuta:
 npm run test:coverage
 ```
 
+## Base de datos
+
+La estructura de la base de datos es la siguiente:
+![](https://i.imgur.com/uiy5rJrl.png)
+
+
 ## Authors
