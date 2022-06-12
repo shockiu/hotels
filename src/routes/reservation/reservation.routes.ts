@@ -2,13 +2,14 @@
 import { Router } from 'express';
 import { getReservations } from '../../controllers/reservations/getReservations';
 import { createReservation } from '../../controllers/reservations/createReservation';
-// import {  } from '../../controllers/reservations/modifyReservation';
+import { modifyReservation } from '../../controllers/reservations/modifyReservation';
+import { deleteReservation } from '../../controllers/reservations/deleteReservation';
 
 export const reservationsRoutes = (routes: Router) => {
 
     /**
      * 
-     * RUTAS DE OBTENCION DE PARTIDOS 
+     * RUTAS DE LAS RESERVACIONES 
      */
 
     /**
@@ -26,10 +27,12 @@ export const reservationsRoutes = (routes: Router) => {
      * 
      * PUT
      */
+    routes.put('/reservations/:id', modifyReservation);
 
     /**
      * 
      * DELETE   
      */
+    routes.delete('/reservations/:id', deleteReservation);
 
 }

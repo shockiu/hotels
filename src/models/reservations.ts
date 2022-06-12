@@ -69,6 +69,6 @@ export const RESERVATIONS = sequelize.define('reservations', {
 
 RESERVATIONS.belongsTo(INVOICES, { foreignKey: 'invoice_id', targetKey: 'id' });
 
-CLIENTS.hasMany(RESERVATIONS, { foreignKey: 'client_id' });
-RESERVATIONS.belongsTo(CLIENTS, { foreignKey:'id' });
+CLIENTS.hasOne(RESERVATIONS, { foreignKey: 'client_id' });
+RESERVATIONS.belongsTo(CLIENTS, { foreignKey:'client_id' });
 
