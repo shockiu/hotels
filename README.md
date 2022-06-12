@@ -24,6 +24,7 @@ Esta aplicación permite listar, crear, actualizar y eliminar los registros de r
   
 
 ```
+git clone https://github.com/shockiu/hotels.git
 
 cd hotels
 
