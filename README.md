@@ -229,7 +229,25 @@ Trae como resultado:
 		 "createdAt":  "2014-08-23T07:28:00.000Z",
 	     "updatedAt":  "2006-05-19T22:53:08.000Z"
     }
+ 
+> Puedes usar el **id** de esta respuesta como **client_id** para buscar  en las reservaciones del hotel de esta manera: `GET /api/v1/reservations?client_id=1`
 
-> Puedes usar el **id** de esta respuesta como **client_id** para buscar  en las reservaciones del hotel de esta manera: `GET /api/v1/reservations?client_id=3`
+### Status de reservación
+Para consultar los status de las reservaciones se debe apuntar al suiguinte endpoint: 
+
+    GET /api/v1/status
+Listara los tres tipos de reservaciones ***pending*** (pendiente), ***paid out*** (pagado) y ***deleted*** (eliminado)
+
+> El id de cada respuesta se puede emplear para buscar en las reservaciones como status `GET /api/v1/reservations?status=2`
+
+### Método de pago
+Los métodos de pago se obtiene por este enpoint: 
+
+    GET /api/v1/payments
+Lista tres métodos disponibles ***debit card***, *credit card* y ***cash***
+
+> El id de cada respuesta se puede emplear para buscar en las reservaciones como status `GET /api/v1/reservations?payment_id=3`
 
 ## Authors
+
+
