@@ -15,32 +15,32 @@ cd hotels
 npm install
 ```
 
-### Ejecución de la app
+## Ejecución de la app
 
-## Servidor de desarrollo
+### Servidor de desarrollo
 
 Ejecuta:
 ```
 npm run dev
 ```
 
-## Servidor de producción
+### Servidor de producción
 
 Ejecuta:
 ```
 npm run start
 ```
 
-### Ejecución de test unitarios y code coverage
+## Ejecución de test unitarios y code coverage
 
-## Test unitarios
+### Test unitarios
 
 Ejecuta:
 ```
 npm run test
 ```
 
-## Code coverage
+### Code coverage
 
 Ejecuta:
 ```
