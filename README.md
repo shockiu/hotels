@@ -169,8 +169,10 @@ Un ejemplo de la informacion seria:
 }
 ```
 
-> OPCIONAL: si se quiere llegar a paginar los resultados se puede usar de esta manera `GET /api/v1/reservations?limit=5&page=0 ` 
-> También se puede buscar por campos especificos  								`GET /api/v1/reservations?room_id=4&payment_id=3`. En este caso indicando el ***room_id*** del tipo de habitacion y ***payment_id*** del método de pago
+> OPCIONAL: si se quiere llegar a paginar los resultados se puede usar de esta manera 
+`GET /api/v1/reservations?limit=5&page=0 ` 
+> También se puede buscar por campos especificos
+`GET /api/v1/reservations?room_id=4&payment_id=3`. En este caso indicando el ***room_id*** del tipo de habitacion y ***payment_id*** del método de pago
 
 #### POST
 
@@ -179,7 +181,7 @@ Este endpoint sirve la creación de cada una de las reservaciones del hotel:
     POST /api/v1/reservations
 Enviando la información por el body de la request como sigue: 
 
-     {
+    {
    	    "status": 2,
    	    "room_id": 2,
    	    "client_id": 5,
@@ -222,7 +224,7 @@ De esta manera se podra ver toda la información con respecto a los clientes, de
 
 Trae como resultado: 
 
-     {
+    {
 	     "id":  1,
 		 "full_name":  "Jenifer Hilpert",
 		 "email":  "anastacio.abshire@example.org",
@@ -246,8 +248,27 @@ Los métodos de pago se obtiene por este enpoint:
     GET /api/v1/payments
 Lista tres métodos disponibles ***debit card***, *credit card* y ***cash***
 
-> El id de cada respuesta se puede emplear para buscar en las reservaciones como status `GET /api/v1/reservations?payment_id=3`
+> El id de cada respuesta se puede emplear para buscar en las reservaciones como payment_id `GET /api/v1/reservations?payment_id=3`
 
-## Authors
+### Habitaciones
+Los tipos de habitaciones que tiene el hotel se consultan en este endpoint: 
+
+    GET /api/v1/rooms
+Las son ***suite***, ***junior suite***, ***gran suite*** y ***simple***
+
+> El id de cada respuesta se puede emplear para buscar en las reservaciones como room_id `GET /api/v1/reservations?room_id=4`
+
+### Facturas 
+Las facturas creadas por cada reservación se pueden listar en el siguiente endpoint:
+
+    GET /api/v1/invoices
+
+> El id de cada respuesta se puede emplear para buscar en las reservaciones como invoice_id `GET /api/v1/reservations?invoice_id=1`
+
+
+## Author
+
+Carlos Galeano 😎
+[shockiu](https://github.com/shockiu)
 
 
