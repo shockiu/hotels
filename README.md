@@ -205,9 +205,31 @@ Como se muestra se envia un parámetro adicional que seria el id de la reservaci
     }
 En este caso solo se actuliza el status de esa reservacion del hotel dado que es lo único enviado por el body.
 
+#### DELETE
+Para la ***eliminación*** de un registro de puede usar esta ruta: 
 
+    DELETE /api/v1/reservations/1
 
+Mandando como parámetro el id de la reservación. Aqui el registro no es eliminado del todo, solo cambia el status de ese mismo en la base de datos, pasa de estar pagodo o pendiente a eliminado, en la tablas de reservaciones del hotel.
 
+### Clientes
+Esta base de datos ya tienes clientes por defecto registrados, para consultar los clientes registrados es necesario apuntar a este endpoint: 
 
+    GET /api/v1/clients
+De esta manera se podra ver toda la información con respecto a los clientes, de igual manera se puede buscar información más precisa de los clientes de la siguiente manera: 
+
+    GET /api/v1/clients?full_name=Jenifer Hilpert
+
+Trae como resultado: 
+
+     {
+	     "id":  1,
+		 "full_name":  "Jenifer Hilpert",
+		 "email":  "anastacio.abshire@example.org",
+		 "createdAt":  "2014-08-23T07:28:00.000Z",
+	     "updatedAt":  "2006-05-19T22:53:08.000Z"
+    }
+
+> Puedes usar el **id** de esta respuesta como **client_id** para buscar  en las reservaciones del hotel de esta manera: `GET /api/v1/reservations?client_id=3`
 
 ## Authors
