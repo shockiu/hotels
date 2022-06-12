@@ -16,9 +16,9 @@ export const createReservation = async(req: Request, res: Response) => {
             include: [INVOICES]
         });
         if ( !exists ) {
-            return res.send({reservation, msg: 'Este cliente tiene una reservacion pendiente'}).status(200);
+            return res.status(400).send({msg: 'This cliente has a reservation pending client_id-' + body.client_id});
         }
-        res.send({reservation}).status(200);   
+        res.status(200).send({reservation});   
     } catch (error) {
         console.log(error);
         res.send({message: 'Error en el servidor'}).status(500);

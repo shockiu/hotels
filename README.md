@@ -81,8 +81,7 @@ Ejecuta:
 npm run test
 
 ```
-
-  
+> EJECUTAR CADA TESTS SUIT DE MANERA INDIVIDUAL 
 
 ### Code coverage
 

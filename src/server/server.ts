@@ -73,4 +73,8 @@ export class Server {
         }
 
 
+        get appServer() {
+            return this.app;
+        }
+
 }
