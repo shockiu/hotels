@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"tsc -w\" \"nodemon ./dist/ ./dist/index.js\"",
-    "start": "tsc && node ./dist/index.js",
+    "start": "node ./dist/index.js",
     "test": "jest -c ./jest.unit.json",
     "test:coverage": "jest --coverage -c ./jest.unit.json",
     "watch": "tsc -w"
