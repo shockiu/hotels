@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TYPE_ROOM = exports.STATUS_RESERVATION = exports.RESERVATIONS = exports.PAYMENT_METHODS = exports.INVOICES = exports.CLIENTS = void 0;
+var clients_1 = require("./clients");
+Object.defineProperty(exports, "CLIENTS", { enumerable: true, get: function () { return clients_1.CLIENTS; } });
+var invoices_1 = require("./invoices");
+Object.defineProperty(exports, "INVOICES", { enumerable: true, get: function () { return invoices_1.INVOICES; } });
+var paymentMethods_1 = require("./paymentMethods");
+Object.defineProperty(exports, "PAYMENT_METHODS", { enumerable: true, get: function () { return paymentMethods_1.PAYMENT_METHODS; } });
+var reservations_1 = require("./reservations");
+Object.defineProperty(exports, "RESERVATIONS", { enumerable: true, get: function () { return reservations_1.RESERVATIONS; } });
+var statusReservation_1 = require("./statusReservation");
+Object.defineProperty(exports, "STATUS_RESERVATION", { enumerable: true, get: function () { return statusReservation_1.STATUS_RESERVATION; } });
+var typeRoom_1 = require("./typeRoom");
+Object.defineProperty(exports, "TYPE_ROOM", { enumerable: true, get: function () { return typeRoom_1.TYPE_ROOM; } });
